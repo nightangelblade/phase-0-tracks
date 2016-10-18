@@ -9,3 +9,6 @@ section.job{
 	margin-bottom: 10px;
 	border-radius: 25px;
 }
+ul.accomplishment{
+	font-size: .8em;
+}
