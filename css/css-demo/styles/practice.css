@@ -12,3 +12,8 @@ section.job{
 ul.accomplishment{
 	font-size: .8em;
 }
+/*This was a change for the first letter of the job and volunteer title listings*/
+/*This uses a pseudo-selector and is manipulating a child element*/
+section h3::first-letter{
+	font-size: 1.5em;
+}
