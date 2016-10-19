@@ -1,0 +1,25 @@
+.glasses{
+	z-index: 2;
+	display: block;
+	margin: auto;
+	position: relative;
+	top: 345px;
+	left: 5px;
+}
+.hat{
+	z-index: 1;
+	display: block;
+	margin: auto;
+	position: relative;
+	top: 100px;
+	left: 20px;
+}
+.octopus{
+	z-index: -1;
+	display: block;
+	margin: auto;
+	left: 0;
+	right: 0;
+	padding-top: 20px;
+	position: absolute;
+}
