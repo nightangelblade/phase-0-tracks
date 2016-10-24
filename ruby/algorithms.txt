@@ -1,0 +1,43 @@
+- Ask for up or down
+	- Direction = Response
+- Until elevator doors open
+	- Wait
+- Once elevator doors open
+	- Enter
+- Ask for floor
+	- Floor = Response
+- Until floor number is selected
+	- Start at bottom left corner of panel
+	- Move to the right until end of panel is reached
+	- Move up one row and start from left to right
+	- Repeat until Floor is selected
+	- Push Floor
+
+__________
+
+Brushing Teeth Pseudocode
+
+- Until sink is reached
+	- Advance forward away from shower
+- Pick up toothbrush
+- Pick up toothpaste
+- Open toothpaste
+- Apply toothpaste to toothbrush
+	- If toothpaste is low, make reminder to buy more toothpaste
+	- Ready toothbrush = toothbrush + toothpaste
+- Bring ready toothbrush to mouth
+- Open mouth
+- Apply ready toothbrush to teeth
+- Until teeth are clean
+	- Brush vigorously
+		- Move from bottom left to right, then top right to left
+		- Make circular motions on front of teeth
+- Brush tongue
+- Remove ready toothbrush
+- Close mouth
+- Turn on sink
+- Clean ready toothbrush
+	- Revert to toothbrush
+- Clean mouth
+- Wipe with towel
+- Exit bathroom
