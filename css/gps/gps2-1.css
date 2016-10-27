@@ -1,3 +1,45 @@
-p{
-	color:red;
+section.column-1 {
+  display: inline-block;
+  width: 47%;
+  background-color: red;
+  vertical-align: top;
+  height: 1150px;
+  margin: 10px;
+}
+
+section.column-2 {
+  display: inline-block;
+  width: 47%;
+  background-color: green;
+  height: 1150px;
+  margin: 10px;
+}
+
+h2 {
+  font-family: helvetica;
+}
+
+article {
+  padding: 10px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+a:hover {
+  color: white;
+}
+
+body {
+	width: 900px;
+	margin: auto;
+	background-color: gray;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
 }
