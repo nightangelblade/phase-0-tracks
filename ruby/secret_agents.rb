@@ -19,6 +19,8 @@ def encrypt(password)
     while encrypt_counter < end_password
         if password[encrypt_counter].next == "aa"
              e_string += "a"
+         elsif password[encrypt_counter].next == "!"
+         		e_string += " "
         else 
             e_string += "#{password[encrypt_counter]}".next
             end
