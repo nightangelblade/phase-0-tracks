@@ -1,3 +1,4 @@
+=begin
 class Puppy
 
   def fetch(toy)
@@ -44,14 +45,48 @@ instance.roll_over
 instance.dog_years(5)
 
 instance.jump(3)
+=end
 
+# Create a class - done
+# Create two class methods and initialize methods - done
+# Create loop which creates 50 instances
+# - Create the instance
+# - Create the loop
+# Store all instances in data structure
+# - Create a blank array
+# - Add to the array
+# Iterate using .each and apply class methods to each instance
+# - Iterate through array
+# - Use .each and apply methods to all stored instances
 
+class Explore
+    
+    def travel(place)
+        puts "You've traveled to #{place}!"
+    end
+    
+    def discover(number)
+        found = 1
+        number.times do puts "You've discovered #{found} item!"
+            found += 1
+        end
+    end
+    
+    def initialize
+        puts "Starting Explore..."
+    end
+            
+end
 
+array = []
 
+50.times do instance = Explore.new
+    array.push(instance)   
+end
 
+#p array
 
-
-
-
-
-
+array.each do |x| 
+    x.travel("home")
+    x.discover(3)
+end
