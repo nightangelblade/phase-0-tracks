@@ -26,6 +26,10 @@ class Puppy
         end
         
     end
+    
+    def initialize
+        puts "Initializing new puppy instance..."
+    end
 
 end
 
@@ -40,3 +44,14 @@ instance.roll_over
 instance.dog_years(5)
 
 instance.jump(3)
+
+
+
+
+
+
+
+
+
+
+
