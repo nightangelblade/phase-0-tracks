@@ -21,6 +21,10 @@ class Santa
 		@age += 1
 		@age
 	end	
+
+	def get_mat_at(reindeer)
+		@reindeer_ranking.insert(8, @reindeer_ranking.delete_at(@reindeer_ranking.index("#{reindeer}")))
+	end
 	
 	# getter methods
 	def age
@@ -32,7 +36,9 @@ class Santa
 	end
 	
 	#setter methods
-	
+	def gender=(new_gender)
+		@gender = new_gender
+	end
 	
 end
 
@@ -56,9 +62,11 @@ end
 # end
 
 instance = Santa.new("male", "Asian")
-instance.age
-instance.celebrate_birthday
-instance.age
+instance.get_mat_at("Vixen")
+# instance.age
+# instance.celebrate_birthday
+# instance.age
+# instance.gender = "female"
 # instance = Santa.new
 # instance.speak
 # instance.eat_milk_and_cookies("chocolate chip cookie")
