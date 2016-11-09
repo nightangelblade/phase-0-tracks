@@ -10,9 +10,14 @@ class Santa
 
 	def initialize
 		puts "Initializing Santa instance..."
+		@gender = 
+		@ethnicity = 
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
 	end
 
 end
 
-p speak
-p eat_milk_and_cookies("chocolate chip cookie")
+instance = Santa.new
+instance.speak
+instance.eat_milk_and_cookies("chocolate chip cookie")
