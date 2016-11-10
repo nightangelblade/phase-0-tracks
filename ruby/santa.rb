@@ -1,5 +1,7 @@
 # Business Code
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance..."
@@ -27,18 +29,18 @@ class Santa
 	end
 	
 	# getter methods
-	def age
-		@age
-	end
+	# def age
+	# 	@age
+	# end
 	
-	def ethnicity
-		@ethnicity
-	end
+	# def ethnicity
+	# 	@ethnicity
+	# end
 	
-	#setter methods
-	def gender=(new_gender)
-		@gender = new_gender
-	end
+	# #setter methods
+	# def gender=(new_gender)
+	# 	@gender = new_gender
+	# end
 	
 end
 
@@ -63,10 +65,10 @@ end
 
 instance = Santa.new("male", "Asian")
 instance.get_mat_at("Vixen")
-# instance.age
-# instance.celebrate_birthday
-# instance.age
-# instance.gender = "female"
+instance.age
+instance.celebrate_birthday
+instance.age
+instance.gender = "female"
 # instance = Santa.new
 # instance.speak
 # instance.eat_milk_and_cookies("chocolate chip cookie")
