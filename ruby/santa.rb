@@ -52,13 +52,15 @@ end
 # Pass into instance - 
 # Set new Santa to random age between 0 and 140 - 
 # Print attributes of each Santa - 
-# Extra: Allow user to generate random Santas until they want to stop.
+# Extra: Allow user to generate random Santas x number of times.
 
 gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 ethnicity = ["black", "Latino", "white", "Japanese", "Chinese", "Korean", "Filipino", "Native Islander", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
+puts "How many random Santas do you want to make?"
+repeat = gets.chomp.to_i
 
-2.times do
+repeat.times do
 input_1 = gender.sample
 input_2 = ethnicity.sample
 	
