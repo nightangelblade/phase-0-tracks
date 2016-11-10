@@ -8,7 +8,7 @@ class Santa
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = 0
+		@age = rand(0...140)
 	end
 
 	def speak
@@ -50,15 +50,15 @@ end
 # Pseudocode
 # Randomly select a gender and ethnicity to be passed into Santa instance (Generate a random Santa) -
 # Pass into instance - 
-# Set new Santa to random age between 0 and 140
-# Print attributes of each Santa
+# Set new Santa to random age between 0 and 140 - 
+# Print attributes of each Santa - 
 # Extra: Allow user to generate random Santas until they want to stop.
 
 gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 ethnicity = ["black", "Latino", "white", "Japanese", "Chinese", "Korean", "Filipino", "Native Islander", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 
-
+2.times do
 input_1 = gender.sample
 input_2 = ethnicity.sample
 	
@@ -66,8 +66,10 @@ input_2 = ethnicity.sample
 # p input_2
 
 instance = Santa.new(input_1, input_2)
-p instance
-
+p instance.gender
+p instance.ethnicity
+p instance.age
+end
 
 
 # list = {
