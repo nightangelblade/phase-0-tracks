@@ -9,17 +9,15 @@ class GuessGame
 		answer
 	end
 
-	def answer_setup(answer)
+	def guesses_total(answer)
 		@guess_layout = answer.chars
 		@guess_length = @guess_layout.length
 	end
 
-	def guess_scramble(answer)
+	def guess_scramble(answer, input)
 		scramble = ''
-		scrambe_length = answer.length
-		scrambe_length.times do
-			scramble += "_"
-		end
+		answer.chars { |letter|
+			scramble += (input.include? letter)? letter : '_'}
 		scramble
 		end
 end

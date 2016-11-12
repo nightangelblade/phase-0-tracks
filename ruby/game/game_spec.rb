@@ -8,10 +8,14 @@ it "stores the answer given" do
   end
 
 it "splits answer into array" do
-		expect(game.answer_setup("test")).to eq 4
+		expect(game.guesses_total("test")).to eq 4
   end
 
 it "scrambles into blanks" do
-		expect(game.guess_scramble(["t", "e", "s", "t"])).to eq "____"
+		expect(game.guess_scramble("test", "_")).to eq "____"
+  end
+
+it "scrambles into blanks, except for correct guesses" do
+		expect(game.guess_scramble("test", "ts")).to eq "t_st"
   end
 end
