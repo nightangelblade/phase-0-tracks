@@ -3,6 +3,7 @@ require_relative 'game'
 #User Interface
 
 game = GuessGame.new
+wrong_attempt = 0
 
 puts "Player 1, please enter word."
 word = gets.chomp
@@ -12,7 +13,7 @@ guess = ""
 
 p game.guess_scramble(word, "_")
 
-puts "Player 2, you have #{guesses} guesses remaining. Please guess a letter."
+puts "Player 2, you have #{guesses - wrong_attempt} guesses remaining. Please guess a letter."
 guess_input = gets.chomp
 guess = guess + guess_input
 scramble = game.guess_scramble(word, guess)
