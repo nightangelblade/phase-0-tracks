@@ -15,6 +15,17 @@ p game.guess_scramble(word, "_")
 
 puts "Player 2, you have #{guesses - wrong_attempt} guesses remaining. Please guess a letter."
 guess_input = gets.chomp
-guess = guess + guess_input
-scramble = game.guess_scramble(word, guess)
-p scramble
+
+if word.include? (guess_input)
+	if guess.include? (guess_input)
+		puts "#{guess_input} is already used. Please try another letter."
+		p game.guess_scramble(word, guess)
+	else
+		guess = guess + guess_input
+		scramble = game.guess_scramble(word, guess)
+		p scramble
+	end
+else
+	puts "Sorry! The word doesn't contain #{guess_input}."
+	wrong_attempt += 1
+end
