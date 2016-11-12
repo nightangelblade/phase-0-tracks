@@ -27,7 +27,7 @@ if word.include? (guess_input)
 		scramble = game.guess_scramble(word, guess)
 		p scramble
 	end
-	if (word.include? ("_")) == false
+	if (scramble.include? ('_')) == false
 		puts "Congratulations! You solved the word!"
 		break
 	end
@@ -38,6 +38,9 @@ else
 		puts "Game Over! You lost!"
 		puts "The word was #{answer}."
 		break
+	else
+		scramble = game.guess_scramble(word, guess)
+		p scramble
 	end
 end
 end

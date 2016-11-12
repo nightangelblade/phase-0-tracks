@@ -7,7 +7,7 @@ it "stores the answer given" do
     expect(game.get_answer("test")).to eq "test"
   end
 
-it "splits answer into array" do
+it "stores number of guesses" do
 		expect(game.guesses_total("test")).to eq 4
   end
 
