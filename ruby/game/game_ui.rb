@@ -27,8 +27,17 @@ if word.include? (guess_input)
 		scramble = game.guess_scramble(word, guess)
 		p scramble
 	end
+	if (word.include? ("_")) == false
+		puts "Congratulations! You solved the word!"
+		break
+	end
 else
 	puts "Sorry! The word doesn't contain #{guess_input}."
 	wrong_attempt += 1
+	if wrong_attempt == guesses
+		puts "Game Over! You lost!"
+		puts "The word was #{answer}."
+		break
+	end
 end
 end
