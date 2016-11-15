@@ -1,13 +1,15 @@
 // Take string as parameter
-// - Get length of string
-// - Determine length by zero-index
-// Start and end of string
-// - Start at largest index number
-// - Add individual letter to return value
-// Return value string back
+// - Split string into an array
+// Method:
+// - Reverse array
+// - Rejoin array back into string
+// Return the joined string
+// Confirm string was returned corretly using boolean
+// - Compare expected result to actual result.
 
 function reverse(string) {
-	index_length = string.length - 1
-
-	for (; index_length)
+	var split_string = string.split("");
+	return split_string;
 }
+
+console.log(reverse("Hello"));
