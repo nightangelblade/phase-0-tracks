@@ -9,7 +9,8 @@
 
 function reverse(string) {
 	var split_string = string.split("");
-	return split_string;
+	var reverse_array = split_string.reverse();
+	return reverse_array;
 }
 
 console.log(reverse("Hello"));
