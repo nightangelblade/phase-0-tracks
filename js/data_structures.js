@@ -60,3 +60,15 @@ console.log("This car can also honk:");
 weirdCar.honk();
 weirdCar.drift();
 console.log("----");
+
+// Test 1 for iterating through an object
+for (var key in weirdCar) {
+	if (weirdCar.hasOwnProperty(key)) {
+		console.log(key + " -> " + weirdCar[key]);
+	}
+};
+
+// Test 2 for iterating through an object
+Object.keys(weirdCar).forEach(function(key){
+	console.log(key, weirdCar[key]); 
+});
