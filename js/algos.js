@@ -33,15 +33,36 @@
 // 	- If there is at least one match of key and value, return true
 // 	- If there is no match of key and value, return false
 
-var test1 = {test: 1, name: "Test", age: 54};
-var test2 = {test: 1, name: "Testy", age: 54};
+var test = {favorite_number: 1, name: "Test", age: 53};
+var test_true = {favorite_number: 1, name: "Testy", age: 54};
+var test_false = {favorite_number: 2, name: "Tesst", age: 20};
 
+function comparison_test(test1, test2) {
+	var true_test = 0
+	var false_test = 0
 Object.keys(test1).forEach(function(key){
 	if (test1[key] == test2[key]) {
-		console.log(true);
+		true_test += 1;
 	}
 	else {
-		console.log(false);
+		false_test += 1;
 	}
-});
+	});
+if (true_test > 0) {
+	return true;
+}
+else {
+	return false;
+}
+};
 
+console.log("This is the baseline.");
+console.log(test);
+
+console.log("This should return true.");
+console.log(test_true);
+console.log(comparison_test(test, test_true));
+
+console.log("This should return false.");
+console.log(test_false);
+console.log(comparison_test(test, test_false));
