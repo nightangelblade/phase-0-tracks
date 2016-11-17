@@ -86,3 +86,20 @@ end
 
 #=======================================================================
 # Reflection Section
+
+=begin
+What are the differences between the two different hash syntaxes shown in the state_data file?
+The two different hash syntaxes in the state_data file are the rocket operator (=>) and colon operator (:). The main differenve between the two is that the states are referred to as strings, and thus the colon operator can't be applied to them, since they need to be symbols like population_density (lowercase and not contained in quotation marks).
+
+What does require_relative do? How is it different from require?
+require_relative is used to call/load an entire file into another, and is a way of combining different behaviours into a single execution, like how CSS can be linked to HTML documents. The main difference between require_realtive and require is where the code is executed from. require uses the current directory you run the program from as the starting point, while require_relative uses the direction where the program itself resides. So with require, you would have the run the program from the same directory, where with require_relative you could be in any directory and run the code without experiencing an issue.
+
+What are some ways to iterate through a hash?
+One way to iterate through a hash is to use the .each built-in block method, where you can run through the keys and values. This is usually preferred, because it is simplest, but an alternative may be to use a while or until loop to perform the function until it reaches a certain number of times done.
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+What stood out was the fact that they were making use of instance variables, which were applied to all of the methods. This made it simple to refactor, because all that needed to be done was remove those from the arguments of the two methods linked to virus_effects, as well as in that method itself. 
+
+What concept did you most solidify in this challenge?
+The concepts that were solidified in this challenge bere the idea of using a block to iterate over a hash, as well as the idea of using case as a substitute for if statements. It seems to be an alternative, espeically when ranges of integers are involved.
+=end
