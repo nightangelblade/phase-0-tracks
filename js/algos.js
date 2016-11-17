@@ -71,12 +71,24 @@
 // - Takes integer
 // - Builds array of length of integer (add to blank array so many times)
 // - Fills array with random words
-// - Words need to be of random lengths between 1-10 letters.
+//	- Words need to be of random lengths between 1-10 letters.
+//		- Create words by filling a word array with random letters from alphabet.
+//		- Join word array to create word, then add to main array.
 
 function array_generator(amount) {
-	array = [];
-	alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
-	
-	
+	var array = [];
+	var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
 
+	for (var count = 0; count < amount; count++){
+		var word_array = [];
+		var word_length = Math.floor((Math.random() * 10) + 1);
+		for (var word_count = 0; word_count < word_length; word_count++){
+			word_array.push(alphabet[Math.floor((Math.random() * 25))]);
+		};
+		var word_forge = word_array.join("");
+		array.push(word_forge);
+	};
+	return array;
 };
+
+console.log(array_generator(3));
