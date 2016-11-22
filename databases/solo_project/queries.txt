@@ -1,0 +1,108 @@
+COMMAND: 
+SELECT * FROM survivors;
+
+OUTPUT:
+1|John|40|true|4
+2|Davis|25|false|1
+3|Jennifer|15|false|2
+4|Ken|36|true|3
+5|Maya|20|true|3
+6|Luna|70|true|4
+7|Smith|90|false|4
+8|Mark|27|true|1
+
+------
+
+COMMAND: 
+SELECT * FROM headquarters;
+
+OUTPUT:
+1|Loki|San Francisco|true
+2|Thor|London|true
+3|Fenrir|Kyoto|false
+4|Odin|Narsaq|false
+
+------
+
+COMMAND: 
+UPDATE survivors SET active="false" WHERE name="Ken";
+
+------
+
+COMMAND:
+SELECT * FROM survivors, headquarters WHERE survivors.location_id = headquarters.id;
+
+OUTPUT:
+1|John|40|true|4|4|Odin|Narsaq|false
+2|Davis|25|false|1|1|Loki|San Francisco|true
+3|Jennifer|15|false|2|2|Thor|London|true
+4|Ken|36|false|3|3|Fenrir|Kyoto|false
+5|Maya|20|true|3|3|Fenrir|Kyoto|false
+6|Luna|70|true|4|4|Odin|Narsaq|false
+7|Smith|90|false|4|4|Odin|Narsaq|false
+8|Mark|27|true|1|1|Loki|San Francisco|true
+
+------
+
+COMMAND: 
+SELECT survivors.name, survivors.age, headquarters.name, headquarters.location FROM survivors JOIN headquarters ON survivors.location_id = headquarters.id;
+
+OUTPUT: 
+John|40|Odin|Narsaq
+Davis|25|Loki|San Francisco
+Jennifer|15|Thor|London
+Ken|36|Fenrir|Kyoto
+Maya|20|Fenrir|Kyoto
+Luna|70|Odin|Narsaq
+Smith|90|Odin|Narsaq
+Mark|27|Loki|San Francisco
+
+------
+
+COMMAND: 
+SELECT survivors.name, survivors.age, headquarters.name, headquarters.location FROM survivors JOIN headquarters ON survivors.location_id = headquarters.id WHERE survivors.active="true";
+
+OUTPUT:
+John|40|Odin|Narsaq
+Maya|20|Fenrir|Kyoto
+Luna|70|Odin|Narsaq
+Mark|27|Loki|San Francisco
+
+------
+
+COMMAND:
+DELETE FROM survivors WHERE active="false";
+
+------
+
+COMMAND:
+SELECT survivors.name, survivors.age, headquarters.name, headquarters.location FROM survivors LEFT OUTER JOIN headquarters ON survivors.location_id = headquarters.id;
+
+OUTPUT:
+John|40|Odin|Narsaq
+Maya|20|Fenrir|Kyoto
+Luna|70|Odin|Narsaq
+Mark|27|Loki|San Francisco
+
+------
+
+COMMAND:
+SELECT survivors.name, headquarters.name FROM survivors CROSS JOIN headquarters;
+
+OUTPUT:
+John|Loki
+John|Thor
+John|Fenrir
+John|Odin
+Maya|Loki
+Maya|Thor
+Maya|Fenrir
+Maya|Odin
+Luna|Loki
+Luna|Thor
+Luna|Fenrir
+Luna|Odin
+Mark|Loki
+Mark|Thor
+Mark|Fenrir
+Mark|Odin
