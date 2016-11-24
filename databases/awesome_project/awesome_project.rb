@@ -67,3 +67,6 @@ end
 
 
 # DRIVER CODE
+
+character_database.execute(create_table_cmd)
+character_database.execute(create_campaign_cmd)
