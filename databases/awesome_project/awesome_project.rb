@@ -33,10 +33,6 @@ create_table_cmd = <<-SQL
     age INT,
     class VARCHAR(255),
     level INT,
-    personality VARCHAR(255),
-    strengths VARCHAR(255),
-    weaknesses VARCHAR(255),
-    background VARCHAR(255)
     campaign_id INT,
     FOREIGN KEY (campaign_id) REFERENCES campaigns(id)
   )
@@ -53,12 +49,12 @@ create_campaign_cmd = <<-SQL
 SQL
 
 
-def new_character()
-	#character_database.execute("INSERT INTO characters (name, age, class, level, personality, strengths, weaknesses, background, campaign_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", [name, age, class, level, personality, strengths, weaknesses, background, campaign_idname, age, class, level, personality, strengths, weaknesses, background, campaign_id])
+def new_character(database, name, age, type, level, campaign_id)
+	database.execute("INSERT INTO characters (name, age, class, level, campaign_id) VALUES (?, ?, ?, ?, ?)", [name, age, type, level, campaign_id])
 end
 
 def update_character()
-
+	
 end
 
 def delete_character()
@@ -70,3 +66,5 @@ end
 
 character_database.execute(create_table_cmd)
 character_database.execute(create_campaign_cmd)
+
+#new_character(character_database, "Cain", 20, "fighter", 3, 1)
