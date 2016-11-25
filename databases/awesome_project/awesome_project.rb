@@ -24,31 +24,6 @@ The Create, Store, and Update a Character Machine!
 # BUSINESS CODE
 require 'sqlite3'
 
-character_database = SQLite3::Database.new("characters.db")
-
-create_table_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS characters(
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(255),
-    age INT,
-    class VARCHAR(255),
-    level INT,
-    campaign_id INT,
-    FOREIGN KEY (campaign_id) REFERENCES campaigns(id)
-  )
-SQL
-
-create_campaign_cmd = <<-SQL
-  CREATE TABLE IF NOT EXISTS campaigns(
-    id INTEGER PRIMARY KEY,
-    name VARCHAR(255),
-    system VARCHAR(255),
-    theme VARCHAR(255),
-    level VARCHAR(255)
-  )
-SQL
-
-
 def new_character(database, name, age, type, level, campaign_id)
 	database.execute("INSERT INTO characters (name, age, class, level, campaign_id) VALUES (?, ?, ?, ?, ?)", [name, age, type, level, campaign_id])
 	puts "Character created!"

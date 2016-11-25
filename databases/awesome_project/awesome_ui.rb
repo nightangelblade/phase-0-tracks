@@ -39,7 +39,7 @@ if action == "new"
 	puts "Please enter your character's level."
 	character_level = gets.chomp.to_i
 	puts "Please enter the number of the campaign your character is a part of!"
-	p character_database.execute("SELECT * FROM campaigns")
+	p character_database.execute("SELECT campaigns.id, campaigns.name FROM campaigns")
 	campaign = gets.chomp.to_i
 
 	new_character(character_database, character_name, character_age, character_class, character_level, campaign)
@@ -69,7 +69,7 @@ elsif action == "update"
 		update_character_level(character_database, new_class, update_character_name)
 	elsif edit == "campaign"
 		puts "What is the new campaign your character is playing in?"
-		p character_database.execute("SELECT * FROM campaigns")
+		p character_database.execute("SELECT campaigns.id, campaigns.name FROM campaigns")
 		new_campaign = gets.chomp.to_i
 		update_character_campaign(character_database, new_campaign, update_character_name)
 	else
