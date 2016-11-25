@@ -51,10 +51,11 @@ SQL
 
 def new_character(database, name, age, type, level, campaign_id)
 	database.execute("INSERT INTO characters (name, age, class, level, campaign_id) VALUES (?, ?, ?, ?, ?)", [name, age, type, level, campaign_id])
+	puts "Character created!"
 end
 
-def update_character()
-	
+def update_character(database, character_name)
+	database.execute("UPDATE characters SET age=1 WHERE name=?", [character_name])
 end
 
 def delete_character()
@@ -67,4 +68,5 @@ end
 character_database.execute(create_table_cmd)
 character_database.execute(create_campaign_cmd)
 
-#new_character(character_database, "Cain", 20, "fighter", 3, 1)
+new_character(character_database, "Cain", 20, "fighter", 3, 1)
+update_character(character_database, "Cain")
