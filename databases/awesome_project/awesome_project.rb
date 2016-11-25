@@ -56,26 +56,32 @@ end
 
 def update_character_name(database, value, character_name)
 	database.execute("UPDATE characters SET name=? WHERE name=?", [value, character_name])
+	puts "Character name updated!"
 end
 
 def update_character_age(database, value, character_name)
 	database.execute("UPDATE characters SET age=? WHERE name=?", [value, character_name])
+	puts "Character age updated!"
 end
 
 def update_character_class(database, value, character_name)
 	database.execute("UPDATE characters SET class=? WHERE name=?", [value, character_name])
+	puts "Character class updated!"
 end
 
 def update_character_level(database, value, character_name)
 	database.execute("UPDATE characters SET level=? WHERE name=?", [value, character_name])
+	puts "Character level updated!"
 end
 
 def update_character_campaign(database, value, character_name)
 	database.execute("UPDATE characters SET campaign_id=? WHERE name=?", [value, character_name])
+	puts "Character campaign updated!"
 end
 
 def delete_character(database, character_name)
 	database.execute("DELETE FROM characters WHERE name=?", [character_name])
+	puts "Character deleted!"
 end
 
 
@@ -84,10 +90,10 @@ end
 character_database.execute(create_table_cmd)
 character_database.execute(create_campaign_cmd)
 
-#new_character(character_database, "Cain", 20, "fighter", 3, 1)
-#update_character_name(character_database, "Basil", "Cain")
-#update_character_age(character_database, 30, "Basil")
-#update_character_class(character_database, "mage", "Basil")
-#update_character_level(character_database, 4, "Basil")
-#update_character_campaign(character_database, 2, "Basil")
-delete_character(character_database, "Basil")
+# new_character(character_database, "Cain", 20, "fighter", 3, 1)
+# update_character_name(character_database, "Basil", "Cain")
+# update_character_age(character_database, 30, "Basil")
+# update_character_class(character_database, "mage", "Basil")
+# update_character_level(character_database, 4, "Basil")
+# update_character_campaign(character_database, 2, "Basil")
+# delete_character(character_database, "Basil")
