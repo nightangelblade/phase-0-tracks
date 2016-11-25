@@ -1,0 +1,33 @@
+COMMAND:
+SELECT * FROM reviews JOIN users ON users_id = users.id JOIN businesses ON business_id = businesses.id;
+
+OUTPUT:
+id     stars       comment               business_i  users  id          first  lastname    id                    name
+-----  ----------  --------------------  ----------  -----  ----------  -----  ----------  --------------------  ----------------------------
+1      5           great place!          1           1      1           Bradf  Pitt        1                     Grundy Hollow Wedding Chapel
+2      3           got the job done...   2           2      2           Mandy  Kaling      2                     Amir's Towing
+3      2           Overcharged me!       3           3      3           Angel  Jolie       3                     The Beagle Nightclub
+4      1           I twisted my back!    4           4      4           Steve  Wonder      4                     Lotus Yoga
+
+------
+
+COMMAND:
+SELECT reviews.stars, reviews.comment, users.firstname, users.lastname, businesses.name FROM reviews JOIN users ON users_id = users.id JOIN businesses ON business_id = businesses.id;
+
+OUTPUT:
+stars  comment     firstname             lastname    name
+-----  ----------  --------------------  ----------  -----
+5      great plac  Bradford              Pitt        Grund
+3      got the jo  Mandy                 Kaling      Amir'
+2      Overcharge  Angela                Jolie       The B
+1      I twisted   Steven                Wonder      Lotus
+
+------
+
+COMMAND:
+SELECT reviews.stars, reviews.comment, users.firstname, users.lastname, businesses.name FROM reviews JOIN users ON users_id = users.id JOIN businesses ONs_id = businesses.id WHERE business_id=1;
+
+OUTPUT:
+stars  comment     firstname             lastname    name
+-----  ----------  --------------------  ----------  -----
+5      great plac  Bradford              Pitt        Grund
