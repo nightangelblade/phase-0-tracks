@@ -76,17 +76,17 @@ def update_campaign_name(database, value, campaign_name)
 end
 
 def update_campaign_system(database, value, campaign_system)
-	database.execute("UPDATE campaigns SET system=? WHERE system=?", [value, campaign_system])
+	database.execute("UPDATE campaigns SET system=? WHERE name=?", [value, campaign_system])
 	puts "Campaign roleplay system updated!"
 end
 
 def update_campaign_theme(database, value, campaign_theme)
-	database.execute("UPDATE campaigns SET theme=? WHERE theme=?", [value, campaign_theme])
+	database.execute("UPDATE campaigns SET theme=? WHERE name=?", [value, campaign_theme])
 	puts "Campaign theme updated!"
 end
 
 def update_campaign_level(database, value, campaign_level)
-	database.execute("UPDATE campaigns SET level=? WHERE level=?", [value, campaign_level])
+	database.execute("UPDATE campaigns SET level=? WHERE name=?", [value, campaign_level])
 	puts "Campaign level updated!"
 end
 
