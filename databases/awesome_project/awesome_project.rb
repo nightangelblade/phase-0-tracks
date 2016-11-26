@@ -65,6 +65,42 @@ def post_character(database, character_name)
 end
 
 
+def new_campaign(database, name, system, theme, level)
+	database.execute("INSERT INTO campaigns (name, system, theme, level) VALUES (?, ?, ?, ?)", [name, system, theme, level])
+	puts "Campaign created!"
+end
+
+def update_campaign_name(database, value, campaign_name)
+	database.execute("UPDATE campaigns SET name=? WHERE name=?", [value, campaign_name])
+	puts "Campaign name updated!"
+end
+
+def update_campaign_system(database, value, campaign_system)
+	database.execute("UPDATE campaigns SET system=? WHERE system=?", [value, campaign_system])
+	puts "Campaign roleplay system updated!"
+end
+
+def update_campaign_theme(database, value, campaign_theme)
+	database.execute("UPDATE campaigns SET theme=? WHERE theme=?", [value, campaign_theme])
+	puts "Campaign theme updated!"
+end
+
+def update_campaign_level(database, value, campaign_level)
+	database.execute("UPDATE campaigns SET level=? WHERE level=?", [value, campaign_level])
+	puts "Campaign level updated!"
+end
+
+# Edited out to preserve database structure, since removing a row also removes the ID number
+# def delete_campaign(database, campaign_name)
+# 	database.execute("DELETE FROM campaigns WHERE name=?", [campaign_name])
+# 	puts "Campaign deleted!"
+# end
+
+def post_campaign(database, campaign_name)
+	p database.execute("SELECT campaigns.name, campaigns.system, campaigns.theme, campaigns.level FROM campaigns WHERE campaigns.name=?", [campaign_name])
+end
+
+
 # DRIVER CODE
 
 
