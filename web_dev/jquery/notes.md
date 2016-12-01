@@ -23,3 +23,11 @@ $( '#header' ) selects element with id of "header"
 Appears similar to how you select elements in CSS.
 
 Using .attr built-in method allows you to manipulate the appearance of elements similar to CSS.
+------
+Implementation Strategies
+
+Note: Remember to check for typos. I misspelled script and got confused why my jQuery file wasn't loading.
+
+Neat Things: You can actually implement multiple "animation" built-in methods to a single object Ex. hide().show().toggle.... plus you can even determine how fast or slow you want the animation to take.
+
+Definitely make sure you get the overall structure of your script set up first before you begin building the various scripts. Having IDs set up and determining what tags will have what changes will make sure if something acts off you know where to trouble shoot. Pseudocoding and the like I can see also being really useful to not get lost while playing with jQuery.
