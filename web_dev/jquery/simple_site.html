@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Practice Site for jQuery</title>
+</head>
+<body>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Click me to hide!</p>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+<p id="div-p">This is a paragraph inside the div tag. Click on me too!</p></div>
+
+<div id="return">Click here to restore the p tags!</div>
+
+<script type="text/javascript" src="Script/jquery-3.1.1.js"></script>
+<script>
+$(document).ready(function(){
+	$("p").click(function(){
+		$(this).hide(300);
+    });
+	$("div").hide(500).show(500);
+	$("p").slideToggle(1000).slideToggle(1000);
+	$("body").toggle(2000).toggle(2000);
+	$("#div-p").css({color:'blue', fontFamily: 'Helvetica'});
+	$("#return").click(function(){
+		$("p").show(300);
+    });
+});
+</script>
+</body>
+
+</html>
