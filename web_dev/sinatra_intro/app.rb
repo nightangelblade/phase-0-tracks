@@ -55,8 +55,22 @@ end
 # takes person's name as a query parameter
 # says "Good job, [person's name]" or 
 # "Good job!" if no parameter
-
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Good job, #{params[:name]}!"
+  else
+    "Good job!"
+  end
+end
 
 # write a GET route
 # uses route parameters
 # add two numbers and respond with result
+
+get '/:number_1/add/:number_2' do
+  number_1 = params[:number_1].to_i
+  number_2 = params[:number_2].to_i
+  result = number_1 + number_2
+  "#{result}"
+end
