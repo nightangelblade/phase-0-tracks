@@ -74,3 +74,14 @@ get '/:number_1/add/:number_2' do
   result = number_1 + number_2
   "#{result}"
 end
+
+# write a GET route
+# uses route parameter
+# searches database for students with a certain first name
+
+get '/:campus' do
+  campus = params[:campus]
+  p campus
+  student = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  student.to_s
+end
