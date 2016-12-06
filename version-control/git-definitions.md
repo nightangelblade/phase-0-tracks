@@ -10,3 +10,5 @@ A branch is a seperate copy of whatever project you are working on. You would wa
 A commit is a save point within Git, which can also have a message attached which describes what changes were made in the commit. A good commit message has what exact changes were made and where they take place, and are usually concise, although longer ones can be made with the git -v command.
 * What is a merge conflict?
 A merge conflict occurs when a file being changed may have significant differences that Git is unable to figure out how to integrate the changes together. It's not an error, but more a notification that you will have to determine which changes will be present in the merged file.
+
+These are extra words
